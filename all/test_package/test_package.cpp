@@ -1,13 +1,7 @@
-#include <confu_soci/convenienceFunctionForSoci.hxx>
-
-BOOST_FUSION_DEFINE_STRUCT ((test), Player, (std::string, playerId) )
+#include <modern_durak_unreal_cxx/logic/game.hxx>
+using namespace modern_durak_unreal_cxx;
 
 int main() {
-  std::cout<<confu_soci::typeNameWithOutNamespace (test::Player{})<<std::endl;
-  if (confu_soci::typeNameWithOutNamespace (test::Player{})!= "Player")
-  {
-    std::terminate();
-  }
-
-  return 0;
+  auto gameDependencies = GameDependencies{[](auto) {}};
+  auto game = Game{gameDependencies};
 }
