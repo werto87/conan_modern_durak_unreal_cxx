@@ -28,13 +28,16 @@ class ModernDurakUnrealCxx(ConanFile):
         self.options["catch2"].with_benchmark = True
 
     def requirements(self):
-        self.requires("my_web_socket/0.1.3")
-        self.requires("boost/1.86.0")
+        self.requires("my_web_socket/0.1.3",transitive_headers=True)
+        self.requires("durak/1.1.3",transitive_headers=True)
+        self.requires("boost/1.86.0",transitive_headers=True)
         self.requires("fmt/11.2.0")
         self.requires("sml/1.1.8") #DO NOT CHANGE THIS. starting with version 1.1.9 process_event returns ins some cases false where before it returned true
-        self.requires("confu_json/[>=1.1.1 <2]@modern-durak")
-        self.requires("login_matchmaking_game_shared/latest")
+        self.requires("confu_json/1.1.1@modern-durak", force=True,transitive_headers=True)
+        self.requires("login_matchmaking_game_shared/latest",transitive_headers=True)
         self.requires("certify/cci.20201114@modern-durak")
+        self.requires("modern_durak_game_option/latest",transitive_headers=True)        
+        self.requires("modern_durak_game_shared/latest",transitive_headers=True)
 
     def source(self):
         token = os.getenv("GIT_TOKEN")
@@ -64,3 +67,4 @@ class ModernDurakUnrealCxx(ConanFile):
 
     def package_info(self):
         self.cpp_info.libs = [self.name]
+        
