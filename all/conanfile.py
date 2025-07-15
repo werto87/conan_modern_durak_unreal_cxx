@@ -28,6 +28,7 @@ class ModernDurakUnrealCxx(ConanFile):
         self.options["catch2"].with_benchmark = True
 
     def requirements(self):
+        self.requires("confu_algorithm/2.0.0",force=True)
         self.requires("my_web_socket/0.1.3",transitive_headers=True)
         self.requires("durak/1.1.3",transitive_headers=True)
         self.requires("boost/1.86.0",transitive_headers=True)
