@@ -29,23 +29,23 @@ class ModernDurakUnrealCxx(ConanFile):
 
     def requirements(self):
         self.requires("confu_algorithm/2.0.0",force=True)
-        self.requires("my_web_socket/0.1.3",transitive_headers=True)
+        self.requires("my_web_socket/1.0.0",transitive_headers=True)
         self.requires("durak/1.2.0",transitive_headers=True)
-        self.requires("boost/1.86.0",transitive_headers=True)
+        self.requires("boost/1.86.0",force=True,transitive_headers=True)
         self.requires("fmt/11.2.0")
         self.requires("sml/1.1.12",force=True) #DO NOT CHANGE THIS. starting with version 1.1.9 process_event returns ins some cases false where before it returned true
         self.requires("confu_json/1.1.1@modern-durak", force=True,transitive_headers=True)
         self.requires("login_matchmaking_game_shared/latest",transitive_headers=True)
-        self.requires("certify/cci.20201114@modern-durak")
         self.requires("modern_durak_game_option/latest",transitive_headers=True)        
         self.requires("modern_durak_game_shared/latest",transitive_headers=True)
-        self.requires("matchmaking_proxy/1.2.5",transitive_headers=True)
-        self.requires("modern_durak_game/0.0.4",transitive_headers=True)
+        self.requires("matchmaking_proxy/2.1.3",transitive_headers=True)
+        self.requires("modern_durak_game/1.0.0",transitive_headers=True)
+        self.requires("confu_soci/1.0.0",force=True,transitive_headers=True)
 
     def source(self):
         token = os.getenv("GIT_TOKEN_MODERN_DURAK_UNREAL_CXX")
         if not token:
-            raise Exception("Missing GIT_TOKEN environment variable")
+            raise Exception("Missing GIT_TOKEN_MODERN_DURAK_UNREAL_CXX environment variable")
 
         user = "werto87"
         repo_name = "modern_durak_unreal_cxx"
