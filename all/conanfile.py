@@ -24,8 +24,8 @@ class ModernDurakUnrealCxx(ConanFile):
             del self.options.fPIC
 
     def configure(self):
-        self.options["catch2"].with_main = True
-        self.options["catch2"].with_benchmark = True
+        self.options["modern_durak_game"].disable_multiplayer = True
+        self.options["modern_durak_game"].ignore_sml_process_event_result_workaround = True
 
     def requirements(self):
         self.requires("confu_algorithm/2.0.0",force=True)
@@ -39,7 +39,7 @@ class ModernDurakUnrealCxx(ConanFile):
         self.requires("modern_durak_game_option/latest",transitive_headers=True)        
         self.requires("modern_durak_game_shared/latest",transitive_headers=True)
         self.requires("matchmaking_proxy/2.1.7",transitive_headers=True)
-        self.requires("modern_durak_game/3.0.0",transitive_headers=True)
+        self.requires("modern_durak_game/3.0.4",transitive_headers=True)
         self.requires("confu_soci/1.0.0",force=True,transitive_headers=True)
 
     def source(self):
