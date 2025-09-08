@@ -33,13 +33,13 @@ class ModernDurakUnrealCxx(ConanFile):
         self.requires("durak/1.2.0",transitive_headers=True)
         self.requires("boost/1.86.0",force=True,transitive_headers=True)
         self.requires("fmt/11.2.0")
-        self.requires("sml/1.1.12",force=True) #DO NOT CHANGE THIS. starting with version 1.1.9 process_event returns ins some cases false where before it returned true
+        self.requires("sml/1.1.12",force=True)
         self.requires("confu_json/1.1.1@modern-durak", force=True,transitive_headers=True)
         self.requires("login_matchmaking_game_shared/latest",transitive_headers=True)
         self.requires("modern_durak_game_option/latest",transitive_headers=True)        
         self.requires("modern_durak_game_shared/latest",transitive_headers=True)
         self.requires("matchmaking_proxy/3.0.0",transitive_headers=True)
-        self.requires("modern_durak_game/4.0.2",transitive_headers=True)
+        self.requires("modern_durak_game/5.0.0",transitive_headers=True)
         self.requires("confu_soci/1.0.0",force=True,transitive_headers=True)
 
     def source(self):
