@@ -39,7 +39,7 @@ class ModernDurakUnrealCxx(ConanFile):
         self.requires("modern_durak_game_option/latest",transitive_headers=True)        
         self.requires("modern_durak_game_shared/latest",transitive_headers=True)
         self.requires("matchmaking_proxy/3.0.0",transitive_headers=True)
-        self.requires("modern_durak_game/5.0.0",transitive_headers=True)
+        self.requires("modern_durak_game/6.0.0",transitive_headers=True)
         self.requires("confu_soci/1.0.0",force=True,transitive_headers=True)
 
     def source(self):
