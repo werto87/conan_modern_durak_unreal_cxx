@@ -6,7 +6,6 @@ int main()
 {
   auto ioContext = boost::asio::io_context{};
   auto ctx = boost::asio::ssl::context{boost::asio::ssl::context::tls};
-  auto gameContext = GameContext{};
-  auto gameDependencies = GameDependencies{ioContext, ctx, gameContext};
+  auto gameDependencies = GameDependencies{ioContext, ctx};
   auto game = Game{gameDependencies};
 }
