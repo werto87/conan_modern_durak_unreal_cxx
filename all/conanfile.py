@@ -28,9 +28,9 @@ class ModernDurakUnrealCxx(ConanFile):
         self.options["modern_durak_game"].ignore_sml_process_event_result_workaround = True
 
     def requirements(self):
+        self.requires("my_web_socket/5.0.0",transitive_headers=True,force=True)
+        self.requires("confu_soci/1.0.0",force=True,transitive_headers=True)
         self.requires("confu_algorithm/2.0.0",force=True)
-        self.requires("my_web_socket/3.0.7",transitive_headers=True,force=True)
-        self.requires("durak/2.0.0",transitive_headers=True)
         self.requires("boost/1.90.0",force=True,transitive_headers=True)
         self.requires("fmt/11.2.0")
         self.requires("sml/1.1.12",force=True)
@@ -38,9 +38,9 @@ class ModernDurakUnrealCxx(ConanFile):
         self.requires("login_matchmaking_game_shared/latest",transitive_headers=True)
         self.requires("modern_durak_game_option/latest",transitive_headers=True)        
         self.requires("modern_durak_game_shared/latest",transitive_headers=True)
-        self.requires("matchmaking_proxy/4.0.1",transitive_headers=True)
-        self.requires("modern_durak_game/6.4.1",transitive_headers=True)
-        self.requires("confu_soci/1.0.0",force=True,transitive_headers=True)
+        self.requires("matchmaking_proxy/4.2.12",transitive_headers=True)
+        self.requires("modern_durak_game/6.6.4",transitive_headers=True)
+        self.requires("durak/2.0.0",transitive_headers=True)
 
     def source(self):
         token = os.getenv("GIT_TOKEN_MODERN_DURAK_UNREAL_CXX")
