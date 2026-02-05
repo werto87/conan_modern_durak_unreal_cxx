@@ -39,8 +39,8 @@ class ModernDurakUnrealCxx(ConanFile):
         self.requires("modern_durak_game_option/latest",transitive_headers=True)        
         self.requires("modern_durak_game_shared/latest",transitive_headers=True)
         self.requires("matchmaking_proxy/4.2.12",transitive_headers=True)
-        self.requires("modern_durak_game/6.6.4",transitive_headers=True)
-        self.requires("durak/2.0.0",transitive_headers=True)
+        self.requires("modern_durak_game/6.6.5",transitive_headers=True)
+        self.requires("durak/2.1.1",transitive_headers=True)
 
     def source(self):
         token = os.getenv("GIT_TOKEN_MODERN_DURAK_UNREAL_CXX")
